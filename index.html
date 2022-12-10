@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="STYLE/main.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <main class="container">
+        <section class="sec-header">
+            <h3>calc</h3>
+            <div class="themes">
+                <p>theme</p>
+                <div class="toggle-themes" onclick="toggleThemes()">
+                    <div class="radio"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="sec-display"><p>0</p></section>
+        
+        <section class="sec-buttons">
+            <button class="btn-calc" onclick="insertNumber(7)">7</button>
+            <button class="btn-calc" onclick="insertNumber(8)">8</button>
+            <button class="btn-calc" onclick="insertNumber(9)">9</button>
+            <button class="btn-calc delete" onclick="deleteLastNumber()">DEL</button>
+            <button class="btn-calc" onclick="insertNumber(4)">4</button>
+            <button class="btn-calc" onclick="insertNumber(5)">5</button>
+            <button class="btn-calc" onclick="insertNumber(6)">6</button>
+            <button class="btn-calc" onclick="insertOperation(1)">+</button>
+            <button class="btn-calc" onclick="insertNumber(1)">1</button>
+            <button class="btn-calc" onclick="insertNumber(2)">2</button>
+            <button class="btn-calc" onclick="insertNumber(3)">3</button>
+            <button class="btn-calc" onclick="insertOperation(2)">-</button>
+            <button class="btn-calc" onclick="insertDecimal()">,</button>
+            <button class="btn-calc" onclick="insertNumber(0)">0</button>
+            <button class="btn-calc" onclick="insertOperation(3)">/</button>
+            <button class="btn-calc" onclick="insertOperation(4)">x</button>
+            <button class="btn-calc reset" onclick="resetDisplay()">RESET</button>
+            <button class="btn-calc result" onclick="calculateResult()">=</button>
+        </section>
+    </main>
+    <script src="JS/script.js"></script>
+</body>
+</html>

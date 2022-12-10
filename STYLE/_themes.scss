@@ -1,0 +1,54 @@
+@mixin base($color01, $color02, $color03, $color04, $color05, $color06, $color07, $color08, $porcentage){
+    background-color: $color01;
+    border-bottom-color: $color02;
+
+    .radio{
+        transform: translateX($porcentage);
+        background-color: $color07;
+    }
+
+    .sec-display{
+        background-color: $color03;
+    }
+
+    .sec-buttons, .toggle-themes{
+        background-color: $color04;
+    }
+    
+    .reset, .delete{
+        background-color: $color07;
+        border-bottom-color: $color08;
+        &:hover{
+            background-color: $color08;
+        }
+    }
+    
+    .result{
+        background-color: $color05;
+        border-bottom-color: $color06;
+        &:hover{
+            background-color: $color06;
+        }
+    }
+}
+
+.container{
+    @include base(  hsl(223, 10%, 35%),hsl(243, 10%, 25%), 
+                    hsl(223, 10%, 85%),hsl(223, 10%, 25%),
+                    hsl(200, 70%, 60%),hsl(210, 70%, 55%), 
+                    hsl(20, 70%, 60%), hsl(10, 70%, 55%), 0%);
+}
+
+.theme02{
+    @include base(  hsl(270, 10%, 35%),hsl(280, 10%, 25%), 
+                    hsl(0, 0%, 91%),   hsl(300, 10%, 25%),
+                    hsl(20, 70%, 60%), hsl(10, 70%, 55%), 
+                    hsl(350, 70%, 60%),hsl(340, 70%, 55%), 100%);
+}
+
+.theme03{
+    @include base(  hsl(0, 10%, 35%),hsl(350, 10%, 25%), 
+                    hsl(15, 10%, 92%),hsl(9, 10%, 25%),
+                    hsl(0, 70%, 60%),hsl(350, 70%, 55%), 
+                    hsl(35, 69%, 45%), hsl(25, 70%, 40%), 200%);
+}
