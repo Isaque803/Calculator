@@ -1,0 +1,41 @@
+.calc-buttons{
+    padding: 1rem;    
+    gap: 10px;
+    display: grid;
+    grid-template-areas: ". . . ." ". . . ." ". . . ." ". . . ." "reset reset equal equal";  
+    .btn-calc{
+        padding: 0.8rem 1.1rem;
+        cursor: pointer;
+        border: none;
+        font-size: 1.2rem;
+        font-family: 'Red Hat Display', sans-serif;
+        font-weight: 900;
+        color: rgb(61, 61, 60);
+        background-color: hsl(30, 20%, 96%);
+        border-bottom: 4px solid hsl(10, 20%, 76%);
+
+        &:hover{
+            border-bottom: none; 
+            border-top: 4px solid hsl(223, 10%, 25%);
+            background-color: hsl(10, 20%, 86%);
+        }
+    }
+    
+    .delete{
+        padding: 0.8rem 0.45rem;
+    }
+    
+    .reset{
+        grid-area: reset;
+    }
+    
+    .result{
+        grid-area: equal;
+        color: white;
+    }
+    
+    .reset, .delete{
+        font-size: 1rem;
+        color: white;
+    }  
+}

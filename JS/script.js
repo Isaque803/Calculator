@@ -1,4 +1,4 @@
-const display = document.querySelector(".sec-display").querySelector("p")
+const display = document.querySelector(".calc-display").querySelector("p")
 const container  = document.querySelector(".container")
 
 let operetor 

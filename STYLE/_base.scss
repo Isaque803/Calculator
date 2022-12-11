@@ -1,5 +1,3 @@
-$color01: 'Red Hat Display', sans-serif;
-
 *{
     padding: 0px;
     margin: 0px;
@@ -8,7 +6,7 @@ $color01: 'Red Hat Display', sans-serif;
 
 body{
     background-color:hsl(10, 20%, 86%);
-    font-family: $color01;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 .container{
@@ -17,111 +15,6 @@ body{
     margin: 4rem auto auto auto;
     padding: 1rem;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
-
-    .sec-header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1.5rem;
-        color: white;
-
-        h3{
-            font-size: 1.4rem;
-        }
-
-        .themes{
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            
-            .themes p {
-                font-size: 0.8rem;
-                text-transform: uppercase;
-            }
-            
-            .toggle-themes{
-                padding: 0rem 0.3rem;
-                cursor: pointer;
-                width: calc(45px + 0.6rem);
-                height: 20px;
-                border-radius: 10px;
-                display: flex;
-                align-items: center;
-                
-                div{
-                    width: 15px;
-                    height: 15px;
-                    border-radius: 50%;
-                    transition: 0.3s;
-                }
-            } 
-        }
-    }
-
-    .sec-display{
-        width: 100%;
-        height: 70px;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        padding: 1rem;
-        word-break: break-word;
-
-        p{
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: rgb(63, 62, 56);
-            font-family: 'Roboto Mono', monospace;
-        }
-
-        .max-number{
-            font-size: 1.1rem;
-        }
-    }
-    
-    .sec-buttons{
-        padding: 1rem;    
-        gap: 10px;
-        display: grid;
-        grid-template-areas: ". . . ." ". . . ." ". . . ." ". . . ." "reset reset equal equal";    
-    }
-
-    .btn-calc{
-        padding: 0.8rem 1.1rem;
-        cursor: pointer;
-        border: none;
-        font-size: 1.2rem;
-        font-family: $color01;
-        font-weight: 900;
-        color: rgb(61, 61, 60);
-        background-color: hsl(30, 20%, 96%);
-        border-bottom: 4px solid hsl(10, 20%, 76%);
-
-        &:hover{
-            border-bottom: none; 
-            border-top: 4px solid hsl(223, 10%, 25%);
-            background-color: hsl(10, 20%, 86%);
-        }
-    }
-    
-    .delete{
-        padding: 0.8rem 0.45rem;
-    }
-    
-    .reset{
-        grid-area: reset;
-    }
-    
-    .result{
-        grid-area: equal;
-        color: white;
-    }
-    
-    .reset, .delete{
-        font-size: 1rem;
-        color: white;
-    }
 }
 
 

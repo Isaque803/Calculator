@@ -16,66 +16,68 @@ body {
   padding: 1rem;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
 }
-.container .sec-header {
+
+.flex-center, .calc-header .themes .toggle-themes, .calc-header .themes, .calc-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+
+.calc-header {
+  justify-content: space-between;
   margin-bottom: 1.5rem;
   color: white;
 }
-.container .sec-header h3 {
+.calc-header h3 {
   font-size: 1.4rem;
 }
-.container .sec-header .themes {
-  display: flex;
-  align-items: center;
+.calc-header .themes {
   gap: 20px;
 }
-.container .sec-header .themes .themes p {
+.calc-header .themes .themes p {
   font-size: 0.8rem;
   text-transform: uppercase;
 }
-.container .sec-header .themes .toggle-themes {
+.calc-header .themes .toggle-themes {
   padding: 0rem 0.3rem;
   cursor: pointer;
   width: calc(45px + 0.6rem);
   height: 20px;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
 }
-.container .sec-header .themes .toggle-themes div {
+.calc-header .themes .toggle-themes div {
   width: 15px;
   height: 15px;
   border-radius: 50%;
   transition: 0.3s;
 }
-.container .sec-display {
+
+.calc-display {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 70px;
   margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
   justify-content: end;
   padding: 1rem;
   word-break: break-word;
 }
-.container .sec-display p {
+.calc-display p {
   font-size: 1.5rem;
   font-weight: 700;
   color: rgb(63, 62, 56);
   font-family: "Roboto Mono", monospace;
 }
-.container .sec-display .max-number {
+.calc-display .max-number {
   font-size: 1.1rem;
 }
-.container .sec-buttons {
+
+.calc-buttons {
   padding: 1rem;
   gap: 10px;
   display: grid;
   grid-template-areas: ". . . ." ". . . ." ". . . ." ". . . ." "reset reset equal equal";
 }
-.container .btn-calc {
+.calc-buttons .btn-calc {
   padding: 0.8rem 1.1rem;
   cursor: pointer;
   border: none;
@@ -86,22 +88,22 @@ body {
   background-color: hsl(30deg, 20%, 96%);
   border-bottom: 4px solid hsl(10deg, 20%, 76%);
 }
-.container .btn-calc:hover {
+.calc-buttons .btn-calc:hover {
   border-bottom: none;
   border-top: 4px solid hsl(223deg, 10%, 25%);
   background-color: hsl(10deg, 20%, 86%);
 }
-.container .delete {
+.calc-buttons .delete {
   padding: 0.8rem 0.45rem;
 }
-.container .reset {
+.calc-buttons .reset {
   grid-area: reset;
 }
-.container .result {
+.calc-buttons .result {
   grid-area: equal;
   color: white;
 }
-.container .reset, .container .delete {
+.calc-buttons .reset, .calc-buttons .delete {
   font-size: 1rem;
   color: white;
 }
@@ -114,24 +116,24 @@ body {
   transform: translateX(0%);
   background-color: hsl(20deg, 70%, 60%);
 }
-.container .sec-display {
+.container .calc-display {
   background-color: hsl(223deg, 10%, 85%);
 }
-.container .sec-buttons, .container .toggle-themes {
+.container .calc-buttons, .container .toggle-themes {
   background-color: hsl(223deg, 10%, 25%);
 }
-.container .reset, .container .delete {
+.container .btn-calc.reset, .container .btn-calc.delete {
   background-color: hsl(20deg, 70%, 60%);
   border-bottom-color: hsl(10deg, 70%, 55%);
 }
-.container .reset:hover, .container .delete:hover {
+.container .btn-calc.reset:hover, .container .btn-calc.delete:hover {
   background-color: hsl(10deg, 70%, 55%);
 }
-.container .result {
+.container .btn-calc.result {
   background-color: hsl(200deg, 70%, 60%);
   border-bottom-color: hsl(210deg, 70%, 55%);
 }
-.container .result:hover {
+.container .btn-calc.result:hover {
   background-color: hsl(210deg, 70%, 55%);
 }
 
@@ -141,26 +143,26 @@ body {
 }
 .theme02 .radio {
   transform: translateX(100%);
-  background-color: hsl(350deg, 70%, 60%);
+  background-color: hsl(340deg, 70%, 60%);
 }
-.theme02 .sec-display {
+.theme02 .calc-display {
   background-color: hsl(0deg, 0%, 91%);
 }
-.theme02 .sec-buttons, .theme02 .toggle-themes {
+.theme02 .calc-buttons, .theme02 .toggle-themes {
   background-color: hsl(300deg, 10%, 25%);
 }
-.theme02 .reset, .theme02 .delete {
-  background-color: hsl(350deg, 70%, 60%);
+.theme02 .btn-calc.reset, .theme02 .btn-calc.delete {
+  background-color: hsl(340deg, 70%, 60%);
   border-bottom-color: hsl(340deg, 70%, 55%);
 }
-.theme02 .reset:hover, .theme02 .delete:hover {
+.theme02 .btn-calc.reset:hover, .theme02 .btn-calc.delete:hover {
   background-color: hsl(340deg, 70%, 55%);
 }
-.theme02 .result {
+.theme02 .btn-calc.result {
   background-color: hsl(20deg, 70%, 60%);
   border-bottom-color: hsl(10deg, 70%, 55%);
 }
-.theme02 .result:hover {
+.theme02 .btn-calc.result:hover {
   background-color: hsl(10deg, 70%, 55%);
 }
 
@@ -172,23 +174,23 @@ body {
   transform: translateX(200%);
   background-color: hsl(35deg, 69%, 45%);
 }
-.theme03 .sec-display {
+.theme03 .calc-display {
   background-color: hsl(15deg, 10%, 92%);
 }
-.theme03 .sec-buttons, .theme03 .toggle-themes {
+.theme03 .calc-buttons, .theme03 .toggle-themes {
   background-color: hsl(9deg, 10%, 25%);
 }
-.theme03 .reset, .theme03 .delete {
+.theme03 .btn-calc.reset, .theme03 .btn-calc.delete {
   background-color: hsl(35deg, 69%, 45%);
   border-bottom-color: hsl(25deg, 70%, 40%);
 }
-.theme03 .reset:hover, .theme03 .delete:hover {
+.theme03 .btn-calc.reset:hover, .theme03 .btn-calc.delete:hover {
   background-color: hsl(25deg, 70%, 40%);
 }
-.theme03 .result {
+.theme03 .btn-calc.result {
   background-color: hsl(0deg, 70%, 60%);
-  border-bottom-color: hsl(350deg, 70%, 55%);
+  border-bottom-color: hsl(340deg, 70%, 55%);
 }
-.theme03 .result:hover {
-  background-color: hsl(350deg, 70%, 55%);
+.theme03 .btn-calc.result:hover {
+  background-color: hsl(340deg, 70%, 55%);
 }/*# sourceMappingURL=main.css.map */

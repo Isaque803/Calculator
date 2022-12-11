@@ -1,0 +1,41 @@
+.flex-center{
+    display: flex;
+    align-items: center;
+}
+
+.calc-header{
+    @extend .flex-center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    color: white;
+
+    h3{
+        font-size: 1.4rem;
+    }
+
+    .themes{
+        @extend .flex-center;
+        gap: 20px;
+        
+        .themes p {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        .toggle-themes{
+            @extend .flex-center;
+            padding: 0rem 0.3rem;
+            cursor: pointer;
+            width: calc(45px + 0.6rem);
+            height: 20px;
+            border-radius: 10px;
+            
+            div{
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                transition: 0.3s;
+            }
+        } 
+    }
+}
