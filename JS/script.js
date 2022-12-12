@@ -1,13 +1,13 @@
-const display = document.querySelector(".calc-display").querySelector("p")
 const container  = document.querySelector(".container")
+const display = document.querySelector(".calc-display").querySelector("p")
+
 
 let operetor 
 let prevNumber = "0"
 let currentNumber = ""
 let hasOperetor = false
-let currentTheme = 1
 
-addEventListener("click", () => maxNumbersDisplay())
+let currentTheme = 1
 
 function toggleThemes(){
     currentTheme += 1
@@ -26,6 +26,8 @@ function toggleThemes(){
         currentTheme = 0
     }
 }
+
+addEventListener("click", () => maxNumbersDisplay())
 
 function maxNumbersDisplay(){
     if (display.innerText.length < 22){
@@ -56,15 +58,19 @@ function insertNumber(number){
     }
 }
 
-function insertOperation(operation){
+function insertOperator(i){
+    if (/-?Infinity/gi.test(display.innerText)){
+        resetDisplay()
+    }
+
     hasOperetor = true
     if (!maxNumbersDisplay()){
         if (!/[0-9]+[/x+-][0-9]+/g.test(display.innerText)){
-            choiceOperation(operation) 
+            choiceOperation(i) 
             if (!/[//x+-]$/g.test(display.innerText)){
                 display.innerText += operetor
             }else{
-                deleteLastNumber()
+                display.innerText = display.innerText.slice(0, -1)
                 display.innerText += operetor 
             }
         }
@@ -90,18 +96,15 @@ function choiceOperation(op){
 
 function insertDecimal(){
     if (!maxNumbersDisplay()){
-        if (/[0-9]+$/g.test(display.innerText)){
-            if (!/[,][0-9]+$/g.test(display.innerText)){
-                display.innerText += ","
-                !hasOperetor ? prevNumber += "," : currentNumber += ","
-            }
+        if (/[0-9]+$/g.test(display.innerText) && !/[,][0-9]+$/g.test(display.innerText)){
+            display.innerText += ","
+            !hasOperetor ? prevNumber += "," : currentNumber += ","
         }
     }
 }
 
 function calculateResult(){
-    prevNumber = parseFloat(prevNumber.replace(",", "."))
-    currentNumber = parseFloat(currentNumber.replace(",", "."))
+    convertStringToNumber()
     switch(operetor){
         case "+":
             display.innerText = (prevNumber + currentNumber).toString().replace(".", ",")
@@ -126,18 +129,25 @@ function calculateResult(){
     hasOperetor = false
 }
 
+function convertStringToNumber(){
+    prevNumber = parseFloat(prevNumber.replace(",", "."))
+    currentNumber = parseFloat(currentNumber.replace(",", "."))
+}
+
 function resetDisplay(){
     display.innerText = ""
     insertZero()
     hasOperetor = false
 }
 
-function deleteLastNumber(){
+function deleteLastCaractere(){
     if (/-?Infinity/gi.test(display.innerText)){
         resetDisplay()
     }
+
     display.innerText = display.innerText.slice(0, -1)
     !hasOperetor ? prevNumber = prevNumber.slice(0, -1) : currentNumber = currentNumber.slice(0, -1)
+    
     if (/^[,0-9]+$/.test(display.innerText)){
         hasOperetor = false
     }

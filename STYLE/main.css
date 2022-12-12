@@ -122,6 +122,9 @@ body {
 .container .calc-buttons, .container .toggle-themes {
   background-color: hsl(223deg, 10%, 25%);
 }
+.container .btn-calc:hover {
+  border-top-color: hsl(223deg, 10%, 25%);
+}
 .container .btn-calc.reset, .container .btn-calc.delete {
   background-color: hsl(20deg, 70%, 60%);
   border-bottom-color: hsl(10deg, 70%, 55%);
@@ -151,6 +154,9 @@ body {
 .theme02 .calc-buttons, .theme02 .toggle-themes {
   background-color: hsl(300deg, 10%, 25%);
 }
+.theme02 .btn-calc:hover {
+  border-top-color: hsl(300deg, 10%, 25%);
+}
 .theme02 .btn-calc.reset, .theme02 .btn-calc.delete {
   background-color: hsl(340deg, 70%, 60%);
   border-bottom-color: hsl(340deg, 70%, 55%);
@@ -179,6 +185,9 @@ body {
 }
 .theme03 .calc-buttons, .theme03 .toggle-themes {
   background-color: hsl(9deg, 10%, 25%);
+}
+.theme03 .btn-calc:hover {
+  border-top-color: hsl(9deg, 10%, 25%);
 }
 .theme03 .btn-calc.reset, .theme03 .btn-calc.delete {
   background-color: hsl(35deg, 69%, 45%);

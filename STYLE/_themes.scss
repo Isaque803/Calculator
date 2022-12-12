@@ -18,6 +18,10 @@
     .calc-buttons, .toggle-themes{
         background-color: $color04;
     }
+
+    .btn-calc:hover{
+        border-top-color: $color04; 
+    }
     
     .btn-calc.reset, .btn-calc.delete{
         background-color: $color07;
